@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import confetti from 'canvas-confetti';
+import Board from './components/Board';
 
 function App() {
 
@@ -49,11 +50,11 @@ function App() {
      </header>
      <main>
         <div className='slide-desc'>
-          <div className="title">
+          <h1 className="title">
             <span className='headline'>A Happy <span>KDA</span></span>
             <span className='heading'>Holiday</span>
             <span className='tagline'>From Caelli <FontAwesomeIcon icon={faHeart} /></span>
-          </div>
+          </h1>
 
           <div className='message'>
             <p>Hi besti, I drew you booba for Christmas! But Evelynn's tiddies don't come for free and she said you better work.</p>
@@ -62,9 +63,7 @@ function App() {
 
         </div>
         <div className='slide-stage'>
-          <div className='board'>
-
-          </div>
+          <Board />
         </div>
      </main>
     </div>
