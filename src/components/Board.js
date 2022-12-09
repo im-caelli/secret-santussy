@@ -4,7 +4,7 @@ import Start from "./Start";
 import Tile from "./Tile";
 
 
-function Board() {
+function Board(props) {
   let boardStyle = {
     width: BOARD_SIZE,
     height: BOARD_SIZE,
@@ -73,6 +73,7 @@ function Board() {
   let playClick = () => {
     shuffleTiles();
     setIsStarted(true);
+    props.setGameStart(true);
   }
 
   return (

@@ -1,4 +1,4 @@
-
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
@@ -40,6 +40,11 @@ function App() {
 
   }());
 
+  // States
+  let [gameStart, setGameStart] = useState(false);
+
+  console.log(gameStart);
+
   return (
     <div className="slide">
      <header className='slide-header'>
@@ -63,7 +68,7 @@ function App() {
 
         </div>
         <div className='slide-stage'>
-          <Board />
+          <Board setGameStart={setGameStart} />
         </div>
      </main>
     </div>
