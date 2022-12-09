@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700&display=swap');
+
+@import '_variables.scss';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:Montserrat, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $purple;
+  background-image: url('../public/img/xmas.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+}
+
+.slide {
+  display: flex; 
+  flex-direction: column;
+  height: 100vh;
+
+  &-header {
+    ul {
+      margin: 1rem;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+
+      li {
+        margin: 0 0.5rem;
+
+        a { 
+          color: $gold;
+          text-decoration: none;
+          transition: opacity $fade-hover;
+
+          &:hover {
+            opacity: .8;
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
+    @media #{$md-break} {
+      max-width: 75%;
+      flex-direction: row;
+    }
+
+    & > div {
+      width: 100%;
+      margin: 0 .5rem;
+    }
+  }
+
+  &-desc {
+    text-align: center;
+    color: $white;
+
+    span {
+      display: block;
+      line-height: 1;
+    }
+
+    .title {
+      margin-bottom: 2rem;
+    }
+
+    .headline {
+      font-size: 1.25rem;
+      text-transform: uppercase;
+
+      span {
+        display: inline; 
+        color:$red;
+        font-weight: bold;
+      }
+    }
+
+    .heading {
+      font-family: "Dancing Script";
+      font-size: 5rem;
+      margin: 0 1rem;
+    }
+
+    .tagline {
+      text-transform: uppercase;
+      color: $gold;
+    }
+
+    .message {
+      max-width: 500px;
+      margin: 0 1rem 3rem 1rem;
+    }
+  }
+
+  &-stage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .board {
+      width: 320px;
+      height: 320px;
+      background: #ccc;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+              0 2px 4px rgba(0,0,0,0.07), 
+              0 4px 8px rgba(0,0,0,0.07), 
+              0 8px 16px rgba(0,0,0,0.07),
+              0 16px 32px rgba(0,0,0,0.07), 
+              0 32px 64px rgba(0,0,0,0.07);
+    }
+  }
+  
+}
