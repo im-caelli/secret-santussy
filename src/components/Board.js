@@ -1,4 +1,5 @@
-import { useState } from "react";
+import confetti from "canvas-confetti";
+import { useState, useEffect } from "react";
 import { BOARD_SIZE, TILE_COUNT, EMPTY_TILE, isSolved, isSolvable, getMatrixPosition} from "../functions";
 import Start from "./Start";
 import Tile from "./Tile";
@@ -35,11 +36,6 @@ function Board(props) {
     setTiles(shuffle(tiles));
   }
 
-  // // Shuffle Click
-  // let shuffleClick = () => {
-  //   shuffleTiles();
-  // }
-
 
   // -- Move Tiles
   
@@ -74,12 +70,33 @@ function Board(props) {
     shuffleTiles();
     setIsStarted(true);
     props.setGameStart(true);
+    props.setGameWin(false);
+    // setGameStart(true);
   }
+
+  // Check if solved and set win state
+  let isWon = isSolved(tiles);
+
+  useEffect(() => {
+    if (isStarted && isWon) {
+      props.setGameWin(true);
+      console.log('win!');
+      confetti();
+    }
+  }, [isWon]);
+
+  
+  //On Load
+  useEffect(() => {
+    shuffleTiles(); // Shuffle Cards
+    props.shuffleClick.current = shuffleTiles;
+    props.replayClick.current = playClick;
+  }, []);
 
   return (
     <div className="board-wrap">
       {isStarted ? (
-        <ul className="board animate__animated animate__fadeIn" style={{...boardStyle}}>
+        <ul className={`board animate__animated animate__fadeIn ${isWon ? "solved" : ""}`} style={{...boardStyle}}>
         {tiles.map((tile, index) => (
           <Tile 
             key={tile}

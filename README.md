@@ -10,13 +10,17 @@ A KDA Evelynn fanart slide puzzle game. My secret santa gift for besti [@chilopa
 
 ## To Do
 
-- [ ] Game State
-  - Start
-  - Game Play
-  - Game Win
 - [ ] Controls
-  - Move Counter
-  - Reset
+  - Download high res
+- [ ] Images
+  - Add blurred image
+  - Add low res image 
+  - high res image
+- [ ] Polish 
+  - tile animation
+  - Solved puzzle
+  - interaction styles
+
 
 
 ## Attribution
