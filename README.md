@@ -1,6 +1,6 @@
 # Secret Santussy
 
-A KDA Evelynn fanart slide puzzle game. My secret santa gift for besti [@chilopawbi](https://www.twitter.com/chilopawbi)!
+An NSFW KDA Evelynn fanart slide puzzle game. My secret santa gift for besti [@chilopawbi](https://www.twitter.com/chilopawbi)!
 
 ## Notes
 
