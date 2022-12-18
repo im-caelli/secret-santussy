@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faHeart, faGift, faRotateRight, faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faGift, faRotateRight, faPlay} from '@fortawesome/free-solid-svg-icons';
 import confetti from 'canvas-confetti';
 import Board from './components/Board';
 
@@ -44,8 +44,9 @@ function App() {
   let [gameStart, setGameStart] = useState(false);
   let [gameWin, setGameWin] = useState(false);
 
-  console.log('game start?:' + gameStart);
-  console.log('game win?:' + gameWin);
+  // console.log('game start?:' + gameStart);
+  // console.log('game win?:' + gameWin);
+
 
   const shuffleClick = useRef(null);
   const replayClick = useRef(null);
@@ -72,7 +73,7 @@ function App() {
           </div>
     
           <div className="download">
-            { gameWin ? (<button className="btn animate__animated animate__bounceIn"><FontAwesomeIcon icon={faGift} /> Save Image</button>) : 'Good Luck!'}
+            { gameWin ? (<a href="./img/eve-highres.jpg" target="_blank" rel="noopener noreferrer" className="btn save animate__animated animate__bounceIn"><FontAwesomeIcon icon={faGift} /> Save Image</a>) : 'Good Luck! 😉'}
           </div>
         </div>
         <div className="slide-stage">
@@ -88,7 +89,9 @@ function App() {
               </div>
             ) : gameStart ? (
               <div className="game-play">
-                <span className="reset animate__animated animate__fadeIn"><button onClick={() => shuffleClick.current()}><FontAwesomeIcon icon={faRotateRight} /> Reset</button></span>
+                <span className="reset animate__animated animate__fadeIn">
+                    <button onClick={() => shuffleClick.current()}><FontAwesomeIcon icon={faRotateRight} /> Reset</button>
+                  </span>
               </div>
             ) : (<div className="game-play"></div>) }
         </div>

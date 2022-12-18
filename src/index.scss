@@ -73,6 +73,11 @@ button {
     background-color: darken($red, 10%);
   }
 
+  &.save {
+    color: $white;
+    padding: 1rem .5rem;
+    text-decoration: none;
+  }
 }
 
 // UI
@@ -177,7 +182,8 @@ button {
     .board-wrap {
       width: 320px;
       height: 320px;
-      background: #ccc; // Use faded image
+      background: $purple url(../public/img/eve-blur.jpg) no-repeat center center;
+      background-size: cover;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -231,15 +237,15 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid gold;
-  color:#333;
+  border: 1px solid rgba( $gold , 0.2);
+  color:$white;
   // height: 100px;
   // width: 100px;
   transition: border-color .3s ease-in;
 
-  &:hover, &:active, &:focus  {
-    border-color: $red;
-  }
+  // &:hover, &:active, &:focus  {
+  //   border-color: $red;
+  // }
 }
 
 .download {

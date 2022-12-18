@@ -13,7 +13,7 @@ function Tile(props) {
     translateX: visualPosition.x,
     translateY: visualPosition.y,
     opacity: tile === EMPTY_TILE ? 0 : 1,
-    backgroundImage: `url(${'./img/kda.png'})`,
+    backgroundImage: `url(${'./img/eve-puzzle.jpg'})`,
     backgroundSize: `${BOARD_SIZE}px`,
     backgroundPosition: `${(100 / (GRID_SIZE - 1)) * (tile % GRID_SIZE)}% ${(100 / (GRID_SIZE - 1)) * (Math.floor(tile / GRID_SIZE))}%`,
     mixBlendMode: tile === index ? 'normal' : 'multiply',
@@ -28,7 +28,7 @@ function Tile(props) {
     <Motion style={motionStyle}>
       {({ translateX, translateY }) => (
         <li className="tile" style={{ ...tileStyle, transform: `translate3d(${translateX}px, ${translateY}px, 0)`}} onClick={() => tileClick(index)}>
-          {/* {`${tile + 1}`} */}
+          {/* { hint ? `${tile + 1}` : '' } */}
         </li>
       )}
     </Motion>

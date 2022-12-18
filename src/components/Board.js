@@ -76,6 +76,7 @@ function Board(props) {
     // setGameStart(true);
   }
 
+
   // Check if solved and set win state
   let isWon = isSolved(tiles);
 
@@ -88,12 +89,12 @@ function Board(props) {
           x: 0.35,
           y: 0.70
         },
-        colors: ['FFFFFF', 'ECC29A', 'B32B5A']
+        colors: ['FFFFFF', 'ECC29A', 'B32B5A'],
+        shapes: ['circle', 'star']
       });
     }
   }, [isWon]);
 
-  
   //On Load
   useEffect(() => {
     shuffleTiles(); // Shuffle Cards
