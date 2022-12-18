@@ -7,11 +7,7 @@ A KDA Evelynn fanart slide puzzle game. My secret santa gift for besti [@chilopa
 - A puzzle sliding game made in react
 - Art by me!
 - Better on a big screen!
-
-## To Do
-
-- [ ] Lessen snow
-
+- If you need a hint, wink wink
 
 ## Attribution
 
