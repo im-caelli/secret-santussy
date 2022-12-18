@@ -171,6 +171,8 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 200;
     
     .board-wrap {
       width: 320px;
@@ -215,6 +217,7 @@ button {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  background-color: $gold;
   // width: 400px;
 
   &.solved {

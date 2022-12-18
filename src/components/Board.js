@@ -81,7 +81,13 @@ function Board(props) {
     if (isStarted && isWon) {
       props.setGameWin(true);
       console.log('win!');
-      confetti();
+      confetti({
+        origin: {
+          x: 0.33,
+          y: 0.70
+        },
+        colors: ['FFFFFF', 'ECC29A', 'B32B5A']
+      });
     }
   }, [isWon]);
 

@@ -7,10 +7,12 @@ function Tile(props) {
     width: `calc(100% / ${GRID_SIZE})`,
     height: `calc(100% / ${GRID_SIZE})`,
     opacity: tile === EMPTY_TILE ? 0 : 1,
-    // backgroundImage: `url(${'./kda.png'})`,
+    backgroundImage: `url(${'./img/kda.png'})`,
     backgroundSize: `${BOARD_SIZE}px`,
     backgroundPosition: `${(100 / (GRID_SIZE - 1)) * (tile % GRID_SIZE)}% ${(100 / (GRID_SIZE - 1)) * (Math.floor(tile / GRID_SIZE))}%`,
+    mixBlendMode: tile === index ? 'normal' : 'multiply',
   }
+
   return (
 
     <li className="tile" style={{ ...tileStyle}} onClick={() => tileClick(index)}>
