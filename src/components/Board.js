@@ -1,6 +1,6 @@
 import confetti from "canvas-confetti";
 import { useState, useEffect } from "react";
-import { BOARD_SIZE, TILE_COUNT, EMPTY_TILE, isSolved, isSolvable, getMatrixPosition} from "../functions";
+import { BOARD_SIZE, GRID_SIZE, TILE_COUNT, EMPTY_TILE, isSolved, isSolvable, getMatrixPosition} from "../functions";
 import Start from "./Start";
 import Tile from "./Tile";
 
@@ -10,6 +10,8 @@ function Board(props) {
     width: BOARD_SIZE,
     height: BOARD_SIZE,
   }
+
+  const tileSize =  Math.round(BOARD_SIZE / GRID_SIZE);
 
   // States
   let [isStarted, setIsStarted] = useState(false);
@@ -83,7 +85,7 @@ function Board(props) {
       console.log('win!');
       confetti({
         origin: {
-          x: 0.33,
+          x: 0.35,
           y: 0.70
         },
         colors: ['FFFFFF', 'ECC29A', 'B32B5A']
@@ -109,6 +111,8 @@ function Board(props) {
             tile={tile}
             index={index}
             tileClick={tileClick}
+            width={tileSize}
+            height={tileSize}
             />
         ))}
       </ul>

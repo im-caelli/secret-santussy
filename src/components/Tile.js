@@ -1,11 +1,17 @@
-import { BOARD_SIZE, EMPTY_TILE, GRID_SIZE } from "../functions";
+import { BOARD_SIZE, EMPTY_TILE, GRID_SIZE, getMatrixPosition, getVisualPosition } from "../functions";
+import { Motion, spring } from "react-motion";
 
 function Tile(props) {
-  const { tile, index, tileClick} = props;
+  const { tile, index, tileClick, width, height} = props;
+
+  const { row, col } = getMatrixPosition(index);
+  const visualPosition = getVisualPosition(row, col, width, height);
 
   const tileStyle = {
     width: `calc(100% / ${GRID_SIZE})`,
     height: `calc(100% / ${GRID_SIZE})`,
+    translateX: visualPosition.x,
+    translateY: visualPosition.y,
     opacity: tile === EMPTY_TILE ? 0 : 1,
     backgroundImage: `url(${'./img/kda.png'})`,
     backgroundSize: `${BOARD_SIZE}px`,
@@ -13,12 +19,19 @@ function Tile(props) {
     mixBlendMode: tile === index ? 'normal' : 'multiply',
   }
 
+  const motionStyle = {
+    translateX: spring(visualPosition.x),
+    translateY: spring(visualPosition.y)
+  }
+
   return (
-
-    <li className="tile" style={{ ...tileStyle}} onClick={() => tileClick(index)}>
-      {`${tile + 1}`}
-    </li>
-
+    <Motion style={motionStyle}>
+      {({ translateX, translateY }) => (
+        <li className="tile" style={{ ...tileStyle, transform: `translate3d(${translateX}px, ${translateY}px, 0)`}} onClick={() => tileClick(index)}>
+          {/* {`${tile + 1}`} */}
+        </li>
+      )}
+    </Motion>
   );
 }
 

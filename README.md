@@ -17,8 +17,8 @@ A KDA Evelynn fanart slide puzzle game. My secret santa gift for besti [@chilopa
   - Add low res image 
   - high res image
 - [ ] Polish 
-  - tile animation
-  - Solved puzzle
+  - [x] tile animation
+  - [x] Solved puzzle
   - interaction styles
 
 

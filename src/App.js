@@ -30,7 +30,7 @@ function App() {
         // since particles fall down, skew start toward the top
         y: (Math.random() * skew) - 0.2
       },
-      colors: ['#ffffff'],
+      colors: ['FFFFFF', '9998B5'],
       shapes: ['circle'],
       gravity: randomInRange(0.2, 0.4),
       scalar: randomInRange(0.2, 0.5),
