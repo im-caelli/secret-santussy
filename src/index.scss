@@ -218,6 +218,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   background-color: $gold;
+  position: relative;
   // width: 400px;
 
   &.solved {
@@ -226,6 +227,7 @@ button {
 }
 
 .tile {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -233,6 +235,11 @@ button {
   color:#333;
   // height: 100px;
   // width: 100px;
+  transition: border-color .3s ease-in;
+
+  &:hover, &:active, &:focus  {
+    border-color: $red;
+  }
 }
 
 .download {
