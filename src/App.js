@@ -50,6 +50,7 @@ function App() {
 
   const shuffleClick = useRef(null);
   const replayClick = useRef(null);
+  const hintClick = useRef(null);
 
   return (
     <div className="slide">
@@ -73,7 +74,12 @@ function App() {
           </div>
     
           <div className="download">
-            { gameWin ? (<a href="./img/eve-highres.jpg" target="_blank" rel="noopener noreferrer" className="btn save animate__animated animate__bounceIn"><FontAwesomeIcon icon={faGift} /> Save Image</a>) : 'Good Luck! 😉'}
+            { gameStart && gameWin ? (
+              <a href="./img/eve-highres.jpg" target="_blank" rel="noopener noreferrer" className="btn save animate__animated animate__bounceIn"><FontAwesomeIcon icon={faGift} /> Save Image</a>
+            ) : gameStart ? ( <button className="hint" onClick={() => hintClick.current()}>Good Luck! 😉</button>
+            ) : (
+              <span className="hint">Good Luck! 😉</span>
+            )}
           </div>
         </div>
         <div className="slide-stage">
@@ -82,6 +88,7 @@ function App() {
             setGameWin={setGameWin}
             shuffleClick={shuffleClick}
             replayClick={replayClick} 
+            hintClick={hintClick} 
           />
             { gameStart && gameWin ? (
               <div className="game-play">

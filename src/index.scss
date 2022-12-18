@@ -253,12 +253,19 @@ button {
 
   button {
     padding: 1.2rem;
+    line-height: 1rem;
     width: 90%;
     margin: 0 auto;
 
     @media #{$sm-break} {
       width: 75%;
     }
+  }
+
+  .hint {
+    padding: 1.2rem;
+    line-height: 1rem;
+    width: auto;
   }
 }
 

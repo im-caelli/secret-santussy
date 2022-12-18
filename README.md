@@ -10,7 +10,6 @@ A KDA Evelynn fanart slide puzzle game. My secret santa gift for besti [@chilopa
 
 ## To Do
 
-- [ ] Add help (reveal numbers)
 - [ ] Lessen snow
 
 

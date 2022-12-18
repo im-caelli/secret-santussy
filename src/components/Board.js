@@ -16,11 +16,11 @@ function Board(props) {
   // States
   let [isStarted, setIsStarted] = useState(false);
   let [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()]);
+  let [hint, setHint] = useState(false);
 
   //-- Shuffle
 
   // Make sure that it is solvable and not already solved.
-
   let shuffle = (tiles) => {
     const shuffledTiles = [
       ...tiles
@@ -67,15 +67,22 @@ function Board(props) {
     swapTiles(index);
   }
 
+
+  // -- Game
+
   // Play Click
   let playClick = () => {
     shuffleTiles();
     setIsStarted(true);
+    setHint(false);
     props.setGameStart(true);
     props.setGameWin(false);
-    // setGameStart(true);
   }
 
+  // Hint
+  let toggleHint = () => {
+    setHint(true);
+  }
 
   // Check if solved and set win state
   let isWon = isSolved(tiles);
@@ -100,6 +107,7 @@ function Board(props) {
     shuffleTiles(); // Shuffle Cards
     props.shuffleClick.current = shuffleTiles;
     props.replayClick.current = playClick;
+    props.hintClick.current = toggleHint;
   }, []);
 
   return (
@@ -114,6 +122,7 @@ function Board(props) {
             tileClick={tileClick}
             width={tileSize}
             height={tileSize}
+            hint={hint}
             />
         ))}
       </ul>

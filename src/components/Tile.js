@@ -2,7 +2,7 @@ import { BOARD_SIZE, EMPTY_TILE, GRID_SIZE, getMatrixPosition, getVisualPosition
 import { Motion, spring } from "react-motion";
 
 function Tile(props) {
-  const { tile, index, tileClick, width, height} = props;
+  const { tile, index, tileClick, width, height, hint} = props;
 
   const { row, col } = getMatrixPosition(index);
   const visualPosition = getVisualPosition(row, col, width, height);
@@ -28,7 +28,7 @@ function Tile(props) {
     <Motion style={motionStyle}>
       {({ translateX, translateY }) => (
         <li className="tile" style={{ ...tileStyle, transform: `translate3d(${translateX}px, ${translateY}px, 0)`}} onClick={() => tileClick(index)}>
-          {/* { hint ? `${tile + 1}` : '' } */}
+          { hint ? `${tile + 1}` : '' }
         </li>
       )}
     </Motion>
