@@ -70,7 +70,7 @@ function App() {
 
           <div className="message">
             <p>Hi besti, I drew you booba for Christmas! But Evelynn's tiddies don't come for free and she said you better work.</p>
-            <p>Slide the tiles around by clicking a tile next to an empty spot to get the full picture.</p>
+            <p>Click a tile adjecent to an empty tile to slide it around.</p>
           </div>
     
           <div className="download">
