@@ -70,12 +70,12 @@ function App() {
 
           <div className="message">
             <p>Hi besti, I drew you booba for Christmas! But Evelynn's tiddies don't come for free and she said you better work.</p>
-            <p>Slide the tiles around to get the full picture.</p>
+            <p>Slide the tiles around by clicking a tile next to an empty spot to get the full picture.</p>
           </div>
     
           <div className="download">
             { gameStart && gameWin ? (
-              <a href="./img/eve-highres.jpg" target="_blank" rel="noopener noreferrer" className="btn save animate__animated animate__bounceIn"><FontAwesomeIcon icon={faGift} /> Save Image</a>
+              <a href="./img/download.png" target="_blank" rel="noopener noreferrer" className="btn save animate__animated animate__bounceIn"><FontAwesomeIcon icon={faGift} /> Save Image</a>
             ) : gameStart ? ( <button className="hint" onClick={() => hintClick.current()}>Good Luck! 😉</button>
             ) : (
               <span className="hint">Good Luck! 😉</span>
