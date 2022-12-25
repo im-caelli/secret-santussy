@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "./static/css/main.aab4db23.css",
-    "main.js": "./static/js/main.3fcdb271.js",
+    "main.js": "./static/js/main.2335da20.js",
     "static/media/eve-blur.jpg": "./static/media/eve-blur.8da518d7dcd56282f499.jpg",
     "static/media/xmas.svg": "./static/media/xmas.f0ee09a56553765807f2.svg",
     "index.html": "./index.html",
     "main.aab4db23.css.map": "./static/css/main.aab4db23.css.map",
-    "main.3fcdb271.js.map": "./static/js/main.3fcdb271.js.map"
+    "main.2335da20.js.map": "./static/js/main.2335da20.js.map"
   },
   "entrypoints": [
     "static/css/main.aab4db23.css",
-    "static/js/main.3fcdb271.js"
+    "static/js/main.2335da20.js"
   ]
 }
